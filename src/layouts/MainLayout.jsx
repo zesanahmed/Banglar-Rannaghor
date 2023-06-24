@@ -12,14 +12,10 @@ const MainLayout = () => {
                 <div>
                     <Header></Header>
                 </div>
-                <div className='absolute top-0 w-full'>
+                <div className='absolute top-2 w-full px-6'>
                     <NavigationBar></NavigationBar>
                 </div>
-                <div className='absolute top-48 w-full'>
-                    <h2 className='text-center text-7xl font-semibold text-orange-400'>Quality Ingredients <br />
-                        Incredible Taste
-                    </h2>
-                </div>
+
             </div>
 
             <div className="grid grid-cols-3 gap-4">
