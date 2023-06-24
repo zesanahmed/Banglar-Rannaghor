@@ -5,6 +5,7 @@ const Header = () => {
         <div className="carousel w-full h-screen">
             <div id="slide1" className="carousel-item relative w-full">
                 <img src="https://img.freepik.com/premium-photo/chef-adds-salt-steaming-hot-pan_192985-2749.jpg?w=900" className="w-full" />
+
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide3" className="btn btn-circle">❮</a>
                     <a href="#slide2" className="btn btn-circle">❯</a>
