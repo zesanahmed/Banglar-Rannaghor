@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const ChefCard = ({ chef }) => {
     const { id, img, name, experience, recipes, likes } = chef;
     return (
-        <div className="card w-96 glass">
+        <div className="card w-80 mb-4 glass">
             <figure className='h-96'><img src={img} alt="car!" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-xl font-bold">{name}</h2>
@@ -20,7 +20,7 @@ const ChefCard = ({ chef }) => {
                     </div>
                 </div>
                 <div className="card-actions justify-between">
-                    <div className='flex gap-3 ml-2 border-2 border-amber-500 rounded-lg px-4 hover:bg-amber-500'>
+                    <div className='flex gap-3 ml-2 border-2 border-amber-400 rounded-lg px-4'>
                         <p className='mt-1'><FaThumbsUp /></p>
                         <p>{likes}</p>
                     </div>

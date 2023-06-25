@@ -6,7 +6,7 @@ const Chef = () => {
     const allChef = useLoaderData();
 
     return (
-        <div className='grid grid-cols-2 gap-4 px-6 mt-20'>
+        <div className='grid grid-cols-2 gap-4 px-6 mt-20 mx-10'>
             {
                 allChef.map(chef => <ChefCard
                     key={chef.id}

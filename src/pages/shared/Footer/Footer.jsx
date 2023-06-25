@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaYoutube, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 py-10">
+        <footer className="bg-gray-800 py-10 mt-8">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="col-span-1">
@@ -39,7 +39,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="text-center mt-8 text-gray-500">
+                <div className="text-center mt-8 text-amber-500">
                     &copy; {new Date().getFullYear()} Your Chef Website. All rights reserved.
                 </div>
             </div>
