@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import MainLayout from '../../layouts/MainLayout';
 import Home from '../../pages/home/Home';
+import Chef from '../../pages/chef/Chef';
 
 const router = createBrowserRouter([
     {
@@ -13,7 +14,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Chef></Chef>,
+                loader: () => fetch('http://localhost:5000/chefData')
             }
         ]
     },

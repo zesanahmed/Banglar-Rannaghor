@@ -9,7 +9,7 @@ const NavigationBar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <button className="ml-6 text-xl font-semi-bold text-white hover:text-amber-500"><Link to='/home'>Home</Link></button>
+                    <button className="ml-6 text-xl font-semi-bold text-white hover:text-amber-500"><Link to='/'>Home</Link></button>
                     <button className="ml-6 text-xl font-semi-bold text-white hover:text-amber-500"><Link to='/blog'>Blog</Link></button>
                     <button className="ml-6 text-xl font-semi-bold text-white hover:text-amber-500"><Link to='/about'>About Us</Link></button>
                 </ul>
