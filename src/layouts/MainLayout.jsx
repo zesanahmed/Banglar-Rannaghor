@@ -4,6 +4,7 @@ import Footer from '../pages/shared/Footer/Footer';
 import RightNav from '../pages/shared/RightNav/RightNav';
 import NavigationBar from '../pages/shared/NavigationBar/NavigationBar';
 import { Outlet } from 'react-router-dom';
+import InfoCard from '../pages/home/InfoCard';
 
 const MainLayout = () => {
     return (
@@ -15,9 +16,13 @@ const MainLayout = () => {
                 <div className='absolute top-2 w-full px-6'>
                     <NavigationBar></NavigationBar>
                 </div>
+                <div className='mt-10'>
+                    <InfoCard></InfoCard>
+                </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 <div className="col-span-2">
                     <Outlet></Outlet>
                 </div>

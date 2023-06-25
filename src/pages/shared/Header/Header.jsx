@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <div className="carousel w-full h-screen">
             <div id="slide1" className="carousel-item relative w-full">
-                <img src="https://img.freepik.com/premium-photo/chef-adds-salt-steaming-hot-pan_192985-2749.jpg?w=900" className="w-full" />
+                <img src="https://img.freepik.com/premium-photo/chef-adds-salt-steaming-hot-pan_192985-2749.jpg?w=900" className="w-full rounded-b-3xl" />
                 <div className='absolute top-44 w-full'>
                     <h2 className='text-center text-7xl font-semibold text-slate-50'>Quality Ingredients <br />
                         Incredible Taste
