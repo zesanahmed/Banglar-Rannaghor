@@ -3,6 +3,7 @@ import NavigationBar from '../pages/shared/NavigationBar/NavigationBar';
 import { Outlet, useLoaderData } from 'react-router-dom';
 import { FaThumbsUp } from 'react-icons/fa';
 import Footer from '../pages/shared/Footer/Footer';
+import RecipeCard from '../pages/home/RecipeCard';
 
 const ChefLayout = () => {
     const { id, img, name, experience, recipes, likes, bio } = useLoaderData();
@@ -28,6 +29,14 @@ const ChefLayout = () => {
             <div className='mx-10'>
                 <p className='text-slate-900 text-4xl font-bold mt-5'>Description:</p>
                 <p className='mt-2 pr-5 pl-1 text-gray-500'>{bio}</p>
+            </div>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 mx-10 my-16'>
+                {
+                    recipes.map(recipe => <RecipeCard
+                        key={recipe.rating}
+                        recipe={recipe}
+                    ></RecipeCard>)
+                }
             </div>
             <Footer></Footer>
         </div >
