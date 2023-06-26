@@ -24,7 +24,7 @@ const ChefCard = ({ chef }) => {
                         <p className='mt-1'><FaThumbsUp /></p>
                         <p>{likes}</p>
                     </div>
-                    <button className="btn btn-warning"><Link>View Recipes</Link></button>
+                    <button className="btn btn-warning"><Link to={`/chefLayout/${id}`}>View Recipes</Link></button>
                 </div>
             </div>
         </div>
