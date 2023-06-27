@@ -14,7 +14,7 @@ const ChefLayout = () => {
             <img className='w-full h-screen relative' src="https://img.freepik.com/premium-photo/table-with-candle-candles-it_168501-423.jpg?w=1060" alt="" />
             <p className='absolute top-0 w-full p-4'><NavigationBar></NavigationBar></p>
             <div className='flex text-end  ml-20 gap-20 absolute top-28 pt-10'>
-                <figure><img className='lg:w-80 lg:h-5/6 border-2 border-white rounded-xl ' src={img} alt="" /></figure>
+                <figure><img className='lg:w-80 lg:h-5/6 border-2 border-white rounded-xl' src={img} alt="" /></figure>
                 <div className='mt-6 text-left'>
                     <p className='text-4xl font-bold text-amber-500'>{name}</p>
                     <p className='text-white text-xl mt-3'>{experience} Years of experience</p>

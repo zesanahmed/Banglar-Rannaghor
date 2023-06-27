@@ -1,9 +1,14 @@
 import React from 'react';
+import NavigationBar from '../pages/shared/NavigationBar/NavigationBar';
+import { Outlet } from 'react-router-dom';
 
 const LoginLayout = () => {
     return (
         <div>
-            <h2>Login coming soon...</h2>
+            <div className='bg-slate-700 px-6 py-2'>
+                <NavigationBar></NavigationBar>
+            </div>
+            <Outlet></Outlet>
         </div>
     );
 };
