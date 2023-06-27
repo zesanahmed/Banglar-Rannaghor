@@ -4,6 +4,8 @@ import { Outlet, useLoaderData } from 'react-router-dom';
 import { FaThumbsUp } from 'react-icons/fa';
 import Footer from '../pages/shared/Footer/Footer';
 import RecipeCard from '../pages/home/RecipeCard';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ChefLayout = () => {
     const { id, img, name, experience, recipes, likes, bio } = useLoaderData();
@@ -26,11 +28,15 @@ const ChefLayout = () => {
                     </div>
                 </div>
             </div>
-            <div className='mx-10'>
-                <p className='text-slate-900 text-4xl font-bold mt-5'>Description:</p>
+            <div className='m-10'>
+                <p className='text-slate-800 text-4xl font-bold mt-5'>Description:</p>
                 <p className='mt-2 pr-5 pl-1 text-gray-500'>{bio}</p>
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 mx-10 my-16'>
+            <div className='m-10'>
+                <p className='text-4xl font-bold text-slate-800 '>Recipes:</p>
+                <p className='mt-2 text-xl text-gray-600'>Delicious Creations: Exploring Exquisite Recipes</p>
+            </div>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 mx-10 mb-16'>
                 {
                     recipes.map(recipe => <RecipeCard
                         key={recipe.rating}
@@ -39,6 +45,7 @@ const ChefLayout = () => {
                 }
             </div>
             <Footer></Footer>
+            <ToastContainer />
         </div >
     );
 };
