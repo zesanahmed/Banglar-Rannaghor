@@ -12,6 +12,7 @@ import ChefDetailsLayout from '../../pages/shared/ChefDetails/ChefDetailsLayout'
 import LoginLayout from '../../layouts/LoginLayout';
 import Login from '../../pages/login/Login/Login';
 import Register from '../../pages/login/Register/Register';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
 
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/chefLayout/:id",
-        element: <ChefLayout></ChefLayout>,
+        element: <PrivateRoute><ChefLayout></ChefLayout></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/chefData/${params.id}`),
     }
 

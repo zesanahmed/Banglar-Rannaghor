@@ -3,8 +3,16 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider/AuthProvider';
 
 const NavigationBar = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
+    const handleLogout = () => {
+        logOut()
+            .then()
+            .catch(error => {
+                const errorMessage = error.message;
+                console.log(errorMessage)
+            })
+    }
 
     return (
         <div className="navbar text-white">
@@ -21,7 +29,7 @@ const NavigationBar = () => {
             <div className="navbar-end">
                 {user && <img className='w-14 rounded-full mr-4' src={user.img} alt="" />}
                 {user ?
-                    <Link><button className="btn btn-outline btn-warning px-6">Log out</button></Link> :
+                    <Link><button onClick={handleLogout} className="btn btn-outline btn-warning px-6">Log out</button></Link> :
                     <Link to="/login"><button className="btn btn-outline btn-warning px-6">Login</button></Link>}
             </div>
         </div>

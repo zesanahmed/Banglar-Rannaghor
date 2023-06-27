@@ -1,9 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider/AuthProvider';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log('login page location', location);
+    const from = location.state?.from?.pathname || "/mainLayout";
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -17,7 +21,21 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add your login logic here
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true })
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                console.log(errorMessage);
+            });
     };
     return (
         <form onSubmit={handleSubmit} className="max-w-xs mt-20 mx-auto">
