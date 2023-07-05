@@ -4,6 +4,7 @@ import { AuthContext } from '../../../providers/AuthProvider/AuthProvider';
 
 const NavigationBar = () => {
     const { user, logOut } = useContext(AuthContext);
+    console.log(user);
 
     const handleLogout = () => {
         logOut()
@@ -27,7 +28,7 @@ const NavigationBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {user && <img className='w-14 rounded-full mr-4' src={user.img} alt="" />}
+                {user && <div className='tooltip' data-tooltip-content={user.displayName}> <img className='w-14 rounded-full mr-4 tooltip' data-tip={user.displayName} src={user.photoURL} alt="" /></div>}
                 {user ?
                     <Link><button onClick={handleLogout} className="btn btn-outline btn-warning px-6">Log out</button></Link> :
                     <Link to="/login"><button className="btn btn-outline btn-warning px-6">Login</button></Link>}

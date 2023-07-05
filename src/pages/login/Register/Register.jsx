@@ -1,9 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider/AuthProvider';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log('login page location', location);
+    const from = location.state?.from?.pathname || "/mainLayout";
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -28,6 +32,7 @@ const Register = () => {
             .then(result => {
                 const createUser = result.user;
                 console.log(createUser);
+                navigate(from, { replace: true })
             })
             .catch((error) => {
                 const errorMessage = error.message;
